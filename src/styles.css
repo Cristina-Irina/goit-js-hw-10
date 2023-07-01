@@ -1,0 +1,144 @@
+h2 {
+  font-size: 26px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.cat-info {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: left;
+}
+
+.cat-info p {
+  width: 600px;
+  font-size: 20px;
+}
+
+.loader {
+  perspective: 1000px;
+  border-radius: 50%;
+  width: 200px; /* Increase the width */
+  height: 200px; /* Increase the height */
+  color: #2966ff; /* Blue */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loader:before,
+.loader:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  transform: rotateX(70deg);
+  animation: 1s spin linear infinite;
+}
+
+.loader:after {
+  color: #448aff; /* Light Blue */
+  transform: rotateY(70deg);
+  animation-delay: 0.4s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+}
+
+@keyframes rotateccw {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes spin {
+  0%,
+  100% {
+    box-shadow: 0.2em 0px 0 0px currentcolor;
+  }
+  12% {
+    box-shadow: 0.2em 0.2em 0 0 currentcolor;
+  }
+  25% {
+    box-shadow: 0 0.2em 0 0px currentcolor;
+  }
+  37% {
+    box-shadow: -0.2em 0.2em 0 0 currentcolor;
+  }
+  50% {
+    box-shadow: -0.2em 0 0 0 currentcolor;
+  }
+  62% {
+    box-shadow: -0.2em -0.2em 0 0 currentcolor;
+  }
+  75% {
+    box-shadow: 0px -0.2em 0 0 currentcolor;
+  }
+  87% {
+    box-shadow: 0.2em -0.2em 0 0 currentcolor;
+  }
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
+
+select {
+  /* styling */
+  background-color: #c6dbff; /* Light Blue */
+  border: thin solid #83aef7; /* Pale Blue */
+  border-radius: 4px;
+  display: block;
+  margin: 0 auto;
+  font: inherit;
+  line-height: 1.5em;
+  padding: 0.5em 3.5em 0.5em 1em;
+
+  /* reset */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: 0 2px 4px rgba(41, 102, 255, 0.15); /* Blue with opacity */
+}
+select:focus {
+  outline: none;
+  border-color: #2966ff; /* Blue */
+  box-shadow: 0 0 0 2px #2966ff40; /* Blue with opacity */
+}
+
+/* arrows */
+select.breed-select {
+  background-image: linear-gradient(45deg, transparent 50%, #2966ff 50%),
+    linear-gradient(135deg, #2966ff 50%, transparent 50%),
+    linear-gradient(to right, #2979ff, #83aef7); /* Different shades of Blue */
+  background-position: calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px), 100% 0;
+  background-size: 5px 5px, 5px 5px, 2.5em 2.5em;
+  background-repeat: no-repeat;
+}
