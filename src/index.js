@@ -90,7 +90,7 @@ function createCatCard(cats, title) {
 
   const markup = `
     <div>
-      <img src="${cat.url}" class="cat-img" alt="cat" width="600">
+      <img src="${cat.url}" class="cat-img" alt="cat">
     </div>
     <div>
       <h2>${title}</h2>
